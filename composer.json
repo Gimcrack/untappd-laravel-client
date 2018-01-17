@@ -1,0 +1,34 @@
+{
+    "name": "ingenious/untappd-php-client",
+    "description": "An untappd client for php",
+    "type": "package",
+    "homepage": "https://github.com/Gimcrack/untappd-php-client",
+    "keywords": ["untappd","client"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremy Bloomstrom",
+            "email": "jeremy.bloomstrom@matsugov.us"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "~5.1",
+        "kitetail/zttp": "^0.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ingenious\\Untappd\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ingenious\\Untappd\\Providers\\UntappdServiceProvider"
+            ],
+            "aliases" : {
+                "Untappd" : "Ingenious\\Untappd\\Facades\\Untappd"
+            }
+        }
+    }
+}
