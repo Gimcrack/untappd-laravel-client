@@ -2,10 +2,9 @@
 
 namespace Ingenious\Untappd\Contracts;
 
-use \StdClass;
+use StdClass;
 
 interface BeerProvider {
 
-    public function beers($offset, $limit, $sort) : StdClass;
-
+    public function beers() : StdClass;
 }

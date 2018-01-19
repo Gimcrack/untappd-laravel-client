@@ -5,7 +5,7 @@ namespace Ingenious\Untappd\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \App\Untappd\Untappd
+ * @see \Ingenious\Untappd\Untappd
  */
 class Untappd extends Facade
 {

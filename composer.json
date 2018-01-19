@@ -24,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ingenious\\Untappd\\Providers\\UntappdServiceProvider"
+                "Ingenious\\Untappd\\UntappdServiceProvider"
             ],
             "aliases" : {
                 "Untappd" : "Ingenious\\Untappd\\Facades\\Untappd"

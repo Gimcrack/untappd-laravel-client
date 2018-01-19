@@ -2,12 +2,8 @@
 
 namespace Ingenious\Untappd;
 
-use Cache;
 use StdClass;
-use Zttp\Zttp;
-use Carbon\Carbon;
 use Faker\Generator;
-use Illuminate\Support\Collection;
 use Ingenious\Untappd\Contracts\BeerProvider as BeerProviderContract;
 
 class UntappdFake extends BeerProviderStub implements BeerProviderContract  {
@@ -26,34 +22,37 @@ class UntappdFake extends BeerProviderStub implements BeerProviderContract  {
      * Get the beers
      * @method beers
      *
-     * @return   StdClass
+     * @return StdClass
      */
-    public function beers($offset = 0, $limit = 50, $sort = "date")
+    public function beers() : StdClass
     {
-        return $this->fakeBeers($offset, $limit, $sort);
+        return $this->fakeBeers();
     }
 
     /**
      * Get some fake beers
      * @method fakeBeers
      *
-     * @return   object
+     * @param int $offset
+     * @param int $limit
+     * @param string $sort
+     * @return object
      */
     private function fakeBeers($offset = 0, $limit = 50, $sort = "date")
     {
         $beers = collect( range(1,$limit) )
-            ->transform( function($num) {
+            ->transform( function() {
                 return new BeerFake( $this->faker );
             });
 
         return (object) [
-            'beers' => [
+            'beers' => (object) [
                 'sort' => $sort,
                 'offset' => $offset,
                 'limit' => $limit,
                 'sort_english' => 'Date (Descending)',
                 'count' => $beers->count(),
-                'items' => $beers->all()
+                'items' => $beers
             ]
         ];
     }

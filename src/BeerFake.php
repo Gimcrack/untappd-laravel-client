@@ -1,6 +1,8 @@
 <?php
 
-namespace Ingenious\Isupport;
+namespace Ingenious\Untappd;
+
+use Faker\Generator;
 
 class BeerFake {
 
@@ -33,9 +35,9 @@ class BeerFake {
      * Make a new fake beer
      * @method __construct
      *
-     * @return   void
+     * @param Generator $faker
      */
-    public function __construct($faker)
+    public function __construct( Generator $faker)
     {
         $this->bid = $faker->randomDigit;
 
@@ -53,7 +55,7 @@ class BeerFake {
 
         $this->beer_description = $faker->sentence;
 
-        $this->created_at = $faker->date;
+        $this->created_at = $faker->date();
 
         $this->auth_rating = $faker->word;
 

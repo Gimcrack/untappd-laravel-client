@@ -9,5 +9,5 @@ return [
 
     'secret' => env('UNTAPPD_SECRET'),
 
-    'username' => env('UNTAPPD_USERNAME')
+    'brewery_id' => env('UNTAPPD_BREWERY_ID')
 ];

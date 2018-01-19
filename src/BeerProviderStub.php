@@ -5,7 +5,7 @@ namespace Ingenious\Untappd;
 use Ingenious\Untappd\Contracts\BeerProvider;
 use Ingenious\Untappd\Concerns\BeerProviderCanBeFaked;
 
-abstract class BeerProviderStub {
+abstract class BeerProviderStub implements BeerProvider{
 
     use BeerProviderCanBeFaked;
 
@@ -17,7 +17,7 @@ abstract class BeerProviderStub {
 
     protected $secret;
 
-    protected $username;
+    protected $brewery_id;
 
     protected $force_flag;
 
@@ -29,8 +29,7 @@ abstract class BeerProviderStub {
     /**
      * Force a refresh
      * @method force
-     *
-     * @return   $this
+     * @return BeerProvider
      */
     public function force() : BeerProvider
     {

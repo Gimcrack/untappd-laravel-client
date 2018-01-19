@@ -2,9 +2,9 @@
 
 namespace Ingenious\Untappd\Concerns;
 
-use Ingenious\Untappd\Untappd as UntappdProvider;
 use Ingenious\Untappd\UntappdFake;
 use Ingenious\Untappd\Facades\Untappd;
+use Ingenious\Untappd\Untappd as UntappdProvider;
 
 trait BeerProviderCanBeFaked
 {
@@ -12,7 +12,7 @@ trait BeerProviderCanBeFaked
      * Swap out the ticket provider
      * @method fake
      *
-     * @return   this
+     * @return   $this
      */
     public function fake()
     {
@@ -25,7 +25,7 @@ trait BeerProviderCanBeFaked
      * Swap out the fake provider for a real one
      * @method dontFake
      *
-     * @return   this
+     * @return   $this
      */
     public function dontFake()
     {
